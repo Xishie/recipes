@@ -2,25 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>identifier</key>
-    <string>com.github.xishie.download.Bitwarden</string>
-    <key>description</key>
+    <key>Description</key>
     <string>Downloads latest Bitwarden Desktop DMG.</string>
-    <key>minimum_version</key>
-    <string>2.3</string>
-    <key>input</key>
+    <key>Identifier</key>
+    <string>com.github.xishie.download.Bitwarden</string>
+    <key>MinimumVersion</key>
+    <string>1.0</string>
+    <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>Bitwarden</string>
         <key>GITHUB_REPO</key>
         <string>bitwarden/clients</string>
     </dict>
-    <key>process</key>
+    <key>Process</key>
     <array>
         <dict>
-            <key>processor</key>
+            <key>Processor</key>
             <string>GitHubReleasesInfoProvider</string>
-            <key>arguments</key>
+            <key>Arguments</key>
             <dict>
                 <key>github_repo</key>
                 <string>%GITHUB_REPO%</string>
@@ -29,9 +29,9 @@
             </dict>
         </dict>
         <dict>
-            <key>processor</key>
+            <key>Processor</key>
             <string>URLDownloader</string>
-            <key>arguments</key>
+            <key>Arguments</key>
             <dict>
                 <key>url</key>
                 <string>%release_download_url%</string>
@@ -41,9 +41,9 @@
         </dict>
 
         <dict>
-            <key>processor</key>
+            <key>Processor</key>
             <string>Versioner</string>
-            <key>arguments</key>
+            <key>Arguments</key>
             <dict>
                 <key>input_plist_path</key>
                 <string>/Applications/Bitwarden.app/Contents/Info.plist</string>
@@ -52,9 +52,13 @@
             </dict>
         </dict>
         <dict>
-            <key>processor</key>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>CodeSignatureVerifier</string>
-            <key>arguments</key>
+            <key>Arguments</key>
             <dict>
                 <key>input_path</key>
                 <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app</string>
@@ -68,10 +72,6 @@
                         and certificate leaf[subject.OU] = "LTZ2DNF8XL")
                     )</string>
             </dict>
-        </dict>
-        <dict>
-            <key>processor</key>
-            <string>EndOfCheckPhase</string>
         </dict>
     </array>
 </dict>
