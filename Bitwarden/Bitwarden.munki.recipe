@@ -8,10 +8,8 @@
     <string>Downloads and imports latest Bitwarden Desktop DMG into Munki.</string>
     <key>minimum_version</key>
     <string>2.3</string>
-
     <key>parent_recipe</key>
     <string>com.github.xishie.download.Bitwarden</string>
-
     <key>input</key>
     <dict>
         <key>NAME</key>
@@ -23,7 +21,6 @@
         <key>AUTOPKG_MUNKI_REPO</key>
         <string>/mnt/munki_repo</string>
     </dict>
-
     <key>process</key>
     <array>
         <dict>

@@ -8,7 +8,6 @@
     <string>Downloads latest Bitwarden Desktop DMG.</string>
     <key>minimum_version</key>
     <string>2.3</string>
-
     <key>input</key>
     <dict>
         <key>NAME</key>
@@ -16,7 +15,6 @@
         <key>GITHUB_REPO</key>
         <string>bitwarden/clients</string>
     </dict>
-
     <key>process</key>
     <array>
         <dict>
@@ -30,7 +28,6 @@
                 <string>Bitwarden-.*\.dmg</string>
             </dict>
         </dict>
-
         <dict>
             <key>processor</key>
             <string>URLDownloader</string>
@@ -54,7 +51,6 @@
                 <string>CFBundleShortVersionString</string>
             </dict>
         </dict>
-
         <dict>
             <key>processor</key>
             <string>CodeSignatureVerifier</string>
@@ -73,7 +69,6 @@
                     )</string>
             </dict>
         </dict>
-
         <dict>
             <key>processor</key>
             <string>EndOfCheckPhase</string>
