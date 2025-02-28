@@ -2,31 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>identifier</key>
-    <string>com.github.xishie.munki.Bitwarden</string>
-    <key>description</key>
+    <key>Description</key>
     <string>Downloads and imports latest Bitwarden Desktop DMG into Munki.</string>
+    <key>Identifier</key>
+    <string>com.github.xishie.munki.Bitwarden</string>
     <key>MinimumVersion</key>
     <string>2.3</string>
-    <key>parent_recipe</key>
+    <key>ParentRecipe</key>
     <string>com.github.xishie.download.Bitwarden</string>
-    <key>input</key>
+    <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>Bitwarden</string>
         <key>DEVELOPER</key>
         <string>Bitwarden Inc.</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/Bitwarden</string>
-        <key>AUTOPKG_MUNKI_REPO</key>
-        <string>/mnt/munki_repo</string>
+        <string>apps/%NAME%</string>
     </dict>
-    <key>process</key>
+    <key>Process</key>
     <array>
         <dict>
-            <key>processor</key>
+            <key>Processor</key>
             <string>MunkiImporter</string>
-            <key>arguments</key>
+            <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
                 <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
@@ -45,7 +43,7 @@
                     <key>developer</key>
                     <string>%DEVELOPER%</string>
                     <key>category</key>
-                    <string>%CATEGORY%</string>
+                    <string>Utilities</string>
                     <key>minimum_os_version</key>
                     <string>12.0</string>
                     <key>autoremove</key>
