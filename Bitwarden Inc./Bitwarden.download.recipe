@@ -1,38 +1,83 @@
-identifier: "com.github.xishie.download.Bitwarden"
-description: "Downloads latest Bitwarden Desktop DMG."
-minimum_version: "2.3"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>identifier</key>
+    <string>com.github.xishie.download.Bitwarden</string>
+    <key>description</key>
+    <string>Downloads latest Bitwarden Desktop DMG.</string>
+    <key>minimum_version</key>
+    <string>2.3</string>
 
-input:
-  NAME: "Bitwarden"
-  GITHUB_REPO: "bitwarden/clients"
+    <key>input</key>
+    <dict>
+        <key>NAME</key>
+        <string>Bitwarden</string>
+        <key>GITHUB_REPO</key>
+        <string>bitwarden/clients</string>
+    </dict>
 
-process:
-  - processor: "GitHubReleasesInfoProvider"
-    arguments:
-      github_repo: "%GITHUB_REPO%"
-      asset_regex: 'Bitwarden-.*\.dmg'
+    <key>process</key>
+    <array>
+        <dict>
+            <key>processor</key>
+            <string>GitHubReleasesInfoProvider</string>
+            <key>arguments</key>
+            <dict>
+                <key>github_repo</key>
+                <string>%GITHUB_REPO%</string>
+                <key>asset_regex</key>
+                <string>Bitwarden-.*\.dmg</string>
+            </dict>
+        </dict>
 
-  - processor: "URLDownloader"
-    arguments:
-      url: "%release_download_url%"
-      filename: "%NAME%.dmg"
+        <dict>
+            <key>processor</key>
+            <string>URLDownloader</string>
+            <key>arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%release_download_url%</string>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+            </dict>
+        </dict>
 
-  - processor: "Versioner"
-    arguments:
-      input_plist_path: "/Applications/Bitwarden.app/Contents/Info.plist"
-      plist_version_key: "CFBundleShortVersionString"
+        <dict>
+            <key>processor</key>
+            <string>Versioner</string>
+            <key>arguments</key>
+            <dict>
+                <key>input_plist_path</key>
+                <string>/Applications/Bitwarden.app/Contents/Info.plist</string>
+                <key>plist_version_key</key>
+                <string>CFBundleShortVersionString</string>
+            </dict>
+        </dict>
 
-  - processor: "CodeSignatureVerifier"
-    arguments:
-      input_path: "%RECIPE_CACHE_DIR%/downloads/%NAME%.app"
-      requirement: >
-        anchor apple generic and identifier "com.bitwarden.desktop"
-        and (
-          certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */
-          or 
-          (certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ 
-          and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ 
-          and certificate leaf[subject.OU] = "LTZ2DNF8XL")
-        )
+        <dict>
+            <key>processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.app</string>
+                <key>requirement</key>
+                <string>anchor apple generic and identifier "com.bitwarden.desktop"
+                    and (
+                        certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */
+                        or 
+                        (certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ 
+                        and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ 
+                        and certificate leaf[subject.OU] = "LTZ2DNF8XL")
+                    )</string>
+            </dict>
+        </dict>
 
-  - processor: "EndOfCheckPhase"
+        <dict>
+            <key>processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+    </array>
+</dict>
+</plist>
