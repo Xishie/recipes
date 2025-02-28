@@ -10,7 +10,7 @@ process:
   - processor: "GitHubReleasesInfoProvider"
     arguments:
       github_repo: "%GITHUB_REPO%"
-      asset_regex: "Bitwarden-.*\.dmg"
+      asset_regex: 'Bitwarden-.*\.dmg'
 
   - processor: "URLDownloader"
     arguments:
