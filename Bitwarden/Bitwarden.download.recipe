@@ -53,10 +53,6 @@
         </dict>
         <dict>
             <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
             <string>CodeSignatureVerifier</string>
             <key>Arguments</key>
             <dict>
@@ -72,6 +68,10 @@
                         and certificate leaf[subject.OU] = "LTZ2DNF8XL")
                     )</string>
             </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
         </dict>
     </array>
 </dict>
