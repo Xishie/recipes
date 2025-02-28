@@ -1,4 +1,4 @@
-identifier: "com.github.xishie.download.Bitwarden"
+identifier: "com.github.xishie.download.bitwarden"
 description: "Downloads latest Bitwarden Desktop DMG."
 minimum_version: "1.0"
 

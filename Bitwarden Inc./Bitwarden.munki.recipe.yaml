@@ -1,4 +1,4 @@
-identifier: "com.github.xishie.munki.Bitwarden"
+identifier: "com.github.xishie.munki.bitwarden"
 description: "Downloads and imports latest Bitwarden Desktop DMG into Munki."
 minimum_version: "1.0"
 
