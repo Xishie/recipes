@@ -31,13 +31,6 @@
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%release_download_url%</string>
-                <key>filename</key>
-                <string>%NAME%.dmg</string>
-            </dict>
         </dict>
 
         <dict>
