@@ -1,8 +1,8 @@
 identifier: "com.github.xishie.munki.bitwarden"
 description: "Downloads and imports latest Bitwarden Desktop DMG into Munki."
-minimum_version: "1.0"
+minimum_version: "2.3"
 
-parent_recipe: "com.github.xishie.download.Bitwarden"
+parent_recipe: "com.github.xishie.download.bitwarden"
 
 input:
   NAME: "Bitwarden"
