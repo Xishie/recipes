@@ -6,7 +6,7 @@
     <string>com.github.xishie.munki.Bitwarden</string>
     <key>description</key>
     <string>Downloads and imports latest Bitwarden Desktop DMG into Munki.</string>
-    <key>minimum_version</key>
+    <key>MinimumVersion</key>
     <string>2.3</string>
     <key>parent_recipe</key>
     <string>com.github.xishie.download.Bitwarden</string>
