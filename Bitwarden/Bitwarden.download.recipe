@@ -48,12 +48,13 @@
         </dict>
         <dict>
             <key>Processor</key>
-            <string>DmgMounter</string>
-            <key>Input</key>
+            <string>DmgMounter<string>
+            <key>Arguments</key>
             <dict>
-                <key>input_path</key>
+                <key>dmg_path</key>
                 <string>%pathname%</string>
             </dict>
+
         </dict>
         <dict>
             <key>Processor</key>
