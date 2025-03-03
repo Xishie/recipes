@@ -20,7 +20,7 @@
         <dict>
             <key>Processor</key>
             <string>GitHubReleasesInfoProvider</string>
-            <key>Input</key>
+            <key>Arguments</key>
             <dict>
                 <key>github_repo</key>
                 <string>%GITHUB_REPO%</string>
@@ -31,7 +31,7 @@
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
-            <key>Input</key>
+            <key>Arguments</key>
             <dict>
                 <key>filename</key>
                 <string>%NAME%-%version%.dmg</string>
@@ -40,7 +40,7 @@
         <dict>
             <key>Processor</key>
             <string>AppDmgVersioner</string>
-            <key>Input</key>
+            <key>Arguments</key>
             <dict>
                 <key>dmg_path</key>
                 <string>%pathname%</string>
