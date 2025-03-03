@@ -48,11 +48,20 @@
         </dict>
         <dict>
             <key>Processor</key>
+            <string>DmgMounter</string>
+            <key>Arguments</key>
+            <dict>
+                <key>dmg_path</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
             <string>CodeSignatureVerifier</string>
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg/Bitwarden.app</string>
+                <string>%dmg_mount%/%NAME%.app</string>
                 <key>requirement</key>
                 <string>anchor apple generic and identifier "com.bitwarden.desktop"
                     and (
