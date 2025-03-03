@@ -49,6 +49,11 @@
         <dict>
             <key>Processor</key>
             <string>DmgMounter</string>
+            <key>Input</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%</string>
+            </dict>
         </dict>
         <dict>
             <key>Processor</key>
