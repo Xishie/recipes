@@ -49,11 +49,6 @@
         <dict>
             <key>Processor</key>
             <string>DmgMounter</string>
-            <key>Arguments</key>
-            <dict>
-                <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
-            </dict>
         </dict>
         <dict>
             <key>Processor</key>
