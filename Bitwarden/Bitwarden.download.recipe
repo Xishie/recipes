@@ -52,7 +52,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%app_path%</string>
+                <string>%mount_point%/%app_name%</string>
                 <key>requirement</key>
                 <string>anchor apple generic and identifier "com.bitwarden.desktop"
                     and (
