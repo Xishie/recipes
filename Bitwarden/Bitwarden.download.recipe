@@ -31,6 +31,11 @@
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>filename</key>
+                <string>%RECIPE_CACHE_DIR%/downloads/%pathname%</string>
+            </dict>
         </dict>
         <dict>
             <key>Processor</key>
@@ -38,7 +43,7 @@
             <key>Arguments</key>
             <dict>
                 <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+                <string>%RECIPE_CACHE_DIR%/downloads/%pathname%</string>
             </dict>
         </dict>
         <dict>
