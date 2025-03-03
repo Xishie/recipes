@@ -43,8 +43,18 @@
             <key>Arguments</key>
             <dict>
                 <key>dmg_path</key>
-                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%-%version%.dmg</string>
+                <string>%pathname%</string>
             </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>DmgMounter<string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%</string>
+            </dict>
+
         </dict>
         <dict>
             <key>Processor</key>
