@@ -48,7 +48,7 @@
         </dict>
         <dict>
             <key>Processor</key>
-            <string>DmgMounter<string>
+            <string>DmgMounter</string>
             <key>Input</key>
             <dict>
                 <key>input_path</key>
