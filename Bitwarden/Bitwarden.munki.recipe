@@ -7,7 +7,7 @@
     <key>Identifier</key>
     <string>com.github.xishie.munki.Bitwarden</string>
     <key>MinimumVersion</key>
-    <string>2.3</string>
+    <string>1.0</string>
     <key>ParentRecipe</key>
     <string>com.github.xishie.download.Bitwarden</string>
     <key>Input</key>
